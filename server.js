@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {}
+projectData = {};
 
 // Express to run server and routes
 const express = require('express');
@@ -24,15 +24,25 @@ app.use(cors());
 app.use(express.static('website'));
 
 // Spin up the server
-const server = app.listen(3000, serverUp)
+const server = app.listen(3000, serverUp);
 
 // Callback to debug
 function serverUp(){
-    console.log("listening on port 3000")
+    console.log("app is listening on port 3000");
 }
 
 // Initialize all route with a callback function
+app.get('/all', getData);
 
 // Callback function to complete GET '/all'
-
+const getData = (req, res)=>{
+    res.send(projectData);
+}
 // Post Route
+app.post('/post', postData);
+
+// Callback function for POST route
+const postData = (req, res) =>{
+    postData['zipcode'] = req.body.zipcode;
+    postData['feeling'] = req.body.feeling;
+}
