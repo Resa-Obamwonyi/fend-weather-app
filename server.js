@@ -42,7 +42,12 @@ const getData = (req, res)=>{
 app.post('/post', postData);
 
 // Callback function for POST route
-const postData = (req, res) =>{
-    postData['zipcode'] = req.body.zipcode;
-    postData['feeling'] = req.body.feeling;
+const postData = (req, res) => {
+    let data = {
+        'temp': req.body.temperature,
+        'date': req.body.date,
+        'userResponse':  req.body.userResponse
+    }
+    let objectLength = Object.keys(projectData).length;
+    projectData[objectLength+1] = data;
 }
