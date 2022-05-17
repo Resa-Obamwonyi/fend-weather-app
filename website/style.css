@@ -8,12 +8,12 @@ body {
   grid-auto-rows: minmax(150px, auto);
   /* grid-template-columns:  */
   height: 100vh;
-  background: #f23557;
-  color: #f0d43a;
+  background: #0a1c6b;
+  color: #ffffff;
   justify-content: center;
-  grid-gap: 1em;
-  font-size: 20px;
-  font-family: "Oswald", sans-serif;
+  grid-gap: 0.2em;
+  font-size: 30px;
+  font-family: "Poppins", sans-serif;
 }
 
 .holder {
@@ -51,19 +51,19 @@ input {
   height: 60px;
   width: 320px;
   background: #22b2da;
-  color: #f0d43a;
+  color: #ffffff;
   font-size: 20px;
-  font-family: "Oswald", sans-serif;
+  font-family: "Poppins", sans-serif;
   border: none;
 }
 
 button {
   width: 400px;
   height: 100px;
-  background: #3b4a6b;
-  color: #f0d43a;
+  background: #09e0aa;
+  color: #ffffff;
   font-size: 26px;
-  font-family: "Oswald", sans-serif;
+  font-family: "Poppins", sans-serif;
   border: none;
   box-shadow: 2px 4px 5px #444;
 }
@@ -73,9 +73,9 @@ h1 {
 
 textarea {
   background: #22b2da;
-  color: #f0d43a;
+  color: #ffffff;
   font-size: 20px;
-  font-family: "Oswald", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 /* Reset style for HTML element on active to have no border*/
 input:focus,
@@ -87,18 +87,18 @@ button:focus {
 /* Style for Placeholder Text*/
 ::placeholder {
   /* Firefox, Chrome, Opera */
-  color: #f0d43a;
-  font-family: "Oswald", sans-serif;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
 }
 
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: #f0d43a;
-  font-family: "Oswald", sans-serif;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
 }
 
 ::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: #f0d43a;
-  font-family: "Oswald", sans-serif;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
 }
