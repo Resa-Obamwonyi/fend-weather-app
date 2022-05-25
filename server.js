@@ -31,15 +31,10 @@ function serverUp(){
     console.log("app is listening on port 3000");
 }
 
-// Initialize all route with a callback function
-app.get('/all', getData);
-
 // Callback function to complete GET '/all'
 const getData = (req, res)=>{
     res.send(projectData);
 }
-// Post Route
-app.post('/post', postData);
 
 // Callback function for POST route
 const postData = (req, res) => {
@@ -51,3 +46,9 @@ const postData = (req, res) => {
     let objectLength = Object.keys(projectData).length;
     projectData[objectLength+1] = data;
 }
+
+// Initialize all route with a callback function
+app.get('/all', getData);
+
+// Post Route
+app.post('/post', postData);
