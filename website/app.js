@@ -1,6 +1,6 @@
 // Personal API Key for OpenWeatherMap API
 const apiKey = 'c8d5807618fc610b35e6bad125c0c12b&units=imperial';
-const apiBaseUrl = 'api.openweathermap.org';
+const apiBaseUrl = 'https://api.openweathermap.org';
 
 let generateBtn = document.getElementById('generate');
 
