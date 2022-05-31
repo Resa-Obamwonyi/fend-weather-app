@@ -26,6 +26,15 @@ const getWeatherData = async (baseUrl, zip, key) => {
 }
 
 /* Function to POST data */
-
+const postProjectData = async (urlPath, data) =>{
+    const response = await fetch(url, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+}
 
 /* Function to GET Project Data */
