@@ -26,8 +26,8 @@ generateBtn.addEventListener('click', (e) => {
             'temp': data.main.temp,
             'date': date,
             'userResponse': feelings
-        }).then((postResData) => {
-            updateDOM(postResData);
+        }).then(() => {
+            getAppData("/all");
         })
     }
     );
@@ -66,6 +66,19 @@ const postProjectData = async (url="", data={}) => {
 }
 
 /* Function to GET Project Data */
+const getAppData = async (url="") => {
+    const response = await fetch(url);
+    try {
+        const data = await response.json();
+        updateDOM(data);
+    }
+    catch (error) {
+        console.log('error:', error);
+    }
+}
+
+
+/* Function to update the DOM */
 const updateDOM = (projectResData) => {
     console.log(projectResData);
 }
