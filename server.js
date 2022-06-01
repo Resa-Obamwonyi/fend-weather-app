@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Initialize the main project folder
-app.use(express.static('website'));
+app.use(express.static('./website'));
 
 // Spin up the server
 const server = app.listen(3000, serverUp);
@@ -43,12 +43,13 @@ const postData = (req, res) => {
         'date': req.body.date,
         'userResponse':  req.body.userResponse
     }
-    let objectLength = Object.keys(projectData).length;
-    projectData[objectLength+1] = data;
+    projectData = data;
+    res.send(projectData);
 }
+
+// Post Route
+app.post('/post', postData);
 
 // Initialize all route with a callback function
 app.get('/all', getData);
 
-// Post Route
-app.post('/post', postData);
