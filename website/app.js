@@ -12,9 +12,10 @@ generateBtn.addEventListener('click', (e) => {
     e.preventDefault();
     let zipcode = document.getElementById('zip').value;
     getWeatherData(apiBaseUrl, zipcode, apiKey).then((data) => {
+        let date = new Date(data.dt*1000+(data.timezone*1000)).toDateString()
         postProjectData('/post', {
             'temp': data.main.temp,
-            'date': data.date,
+            'date': date,
             'userResponse': feelings
         })
     }
