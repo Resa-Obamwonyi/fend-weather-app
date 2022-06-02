@@ -20,7 +20,6 @@ generateBtn.addEventListener('click', (e) => {
 
         // Generate date from weather response data
         let date = new Date(data.dt * 1000 + (data.timezone * 1000)).toDateString()
-
         // send paramenters to internal post api
         postProjectData('/post', {
             'temp': data.main.temp,
@@ -80,7 +79,6 @@ const getAppData = async (url="") => {
 
 /* Function to update the DOM */
 const updateDOM = (projectResData) => {
-    console.log(projectResData);
     let domDate = document.getElementById('date');
     let domTemp = document.getElementById('temp');
     let domContent = document.getElementById('content');
