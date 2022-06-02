@@ -39,7 +39,7 @@ const getData = (req, res)=>{
 // Callback function for POST route
 const postData = (req, res) => {
     let data = {
-        'temp': req.body.temperature,
+        'temp': req.body.temp,
         'date': req.body.date,
         'userResponse':  req.body.userResponse
     }

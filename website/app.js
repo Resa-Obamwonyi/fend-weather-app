@@ -84,7 +84,7 @@ const updateDOM = (projectResData) => {
     let domDate = document.getElementById('date');
     let domTemp = document.getElementById('temp');
     let domContent = document.getElementById('content');
-    domDate.value = projectResData.date;
-    domTemp.value = projectResData.temp;
-    domContent.value = projectResData.userResponse;
+    domDate.textContent = projectResData.date;
+    domTemp.textContent = projectResData.temp;
+    domContent.textContent = projectResData.userResponse;
 }
