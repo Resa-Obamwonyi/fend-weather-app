@@ -11,10 +11,10 @@ const app = express();
 const bodyParser = require('body-parser');
 
 /* Middleware*/
-const cors =  require('cors');
+const cors = require('cors');
 
 //Here we are configuring express to use body-parser as middle-ware.
-app.use(bodyParser.urlencoded({'extended':false}));
+app.use(bodyParser.urlencoded({ 'extended': false }));
 app.use(bodyParser.json());
 
 // Cors for cross origin allowance
@@ -27,12 +27,12 @@ app.use(express.static('./website'));
 const server = app.listen(3000, serverUp);
 
 // Callback to debug
-function serverUp(){
+function serverUp() {
     console.log("app is listening on port 3000");
 }
 
 // Callback function to complete GET '/all'
-const getData = (req, res)=>{
+const getData = (req, res) => {
     res.send(projectData);
 }
 
@@ -41,7 +41,7 @@ const postData = (req, res) => {
     let data = {
         'temp': req.body.temp,
         'date': req.body.date,
-        'userResponse':  req.body.userResponse
+        'userResponse': req.body.userResponse
     }
     projectData = data;
     res.send(projectData);

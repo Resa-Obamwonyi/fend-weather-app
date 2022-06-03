@@ -45,7 +45,7 @@ const getWeatherData = async (baseUrl, zip, key) => {
 }
 
 /* Function to POST data */
-const postProjectData = async (url="", data={}) => {
+const postProjectData = async (url = "", data = {}) => {
     const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
@@ -65,7 +65,7 @@ const postProjectData = async (url="", data={}) => {
 }
 
 /* Function to GET Project Data */
-const getAppData = async (url="") => {
+const getAppData = async (url = "") => {
     const response = await fetch(url);
     try {
         const data = await response.json();
@@ -79,9 +79,11 @@ const getAppData = async (url="") => {
 
 /* Function to update the DOM */
 const updateDOM = (projectResData) => {
+    // Get dom content
     let domDate = document.getElementById('date');
     let domTemp = document.getElementById('temp');
     let domContent = document.getElementById('content');
+    // update dom content
     domDate.textContent = projectResData.date;
     domTemp.textContent = projectResData.temp;
     domContent.textContent = projectResData.userResponse;
