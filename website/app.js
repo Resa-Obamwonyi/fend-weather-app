@@ -4,10 +4,7 @@ const apiBaseUrl = 'https://api.openweathermap.org';
 
 let generateBtn = document.getElementById('generate');
 
-
-
-/* Function called by event listener when you click the "Generate" button */
-generateBtn.addEventListener('click', (e) => {
+const generateData = (e) => {
     e.preventDefault();
 
     // Get zipcode from input
@@ -30,7 +27,10 @@ generateBtn.addEventListener('click', (e) => {
         })
     }
     );
-})
+}
+
+/* Function called by event listener when you click the "Generate" button */
+generateBtn.addEventListener('click', generateData);
 
 /* Function to get weather API Data*/
 const getWeatherData = async (baseUrl, zip, key) => {
@@ -84,7 +84,7 @@ const updateDOM = (projectResData) => {
     let domTemp = document.getElementById('temp');
     let domContent = document.getElementById('content');
     // update dom content
-    domDate.textContent = projectResData.date;
-    domTemp.textContent = projectResData.temp;
-    domContent.textContent = projectResData.userResponse;
+    domDate.innerHTML = projectResData.date;
+    domTemp.innerHTML = Math.round(projectResData.temp)+ ' degrees';
+    domContent.innerHTML = projectResData.userResponse;
 }
