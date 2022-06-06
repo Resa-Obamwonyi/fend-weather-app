@@ -4,9 +4,6 @@ const apiBaseUrl = 'https://api.openweathermap.org';
 
 let generateBtn = document.getElementById('generate');
 
-/* Function called by event listener when you click the "Generate" button */
-generateBtn.addEventListener('click', generateWeatherReport);
-
 const generateWeatherReport = (e) => {
     e.preventDefault();
 
@@ -31,6 +28,9 @@ const generateWeatherReport = (e) => {
     }
     );
 }
+
+/* Function called by event listener when you click the "Generate" button */
+generateBtn.addEventListener('click', generateWeatherReport);
 
 /* Function to get weather API Data*/
 const openWeatherData = async (baseUrl, userzip, apikey) => {
